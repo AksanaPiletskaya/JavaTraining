@@ -11,6 +11,7 @@ public class Main {
         try {
             int number = Integer.parseInt(br.readLine());
             int length = (int) Math.log10(number) + 1;
+            /// just for test
 
             if (length != 4) {
                 System.out.println("Invalid Number! The number should be four figures.");

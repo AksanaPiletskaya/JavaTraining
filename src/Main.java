@@ -7,12 +7,14 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        // task1();
-        // task2();
-        task3();
+        // Task1();
+        // Task2();
+        // Task3();
+         Task4();
+        // Task5();
     }
 
-    public static void task1() throws IOException{
+    public static void Task1() throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Enter number:");
 
@@ -43,30 +45,67 @@ public class Main {
         }
     }
 
-    public static void task2(){
+    public static void Task2(){
         System.out.println("Input three numbers:");
         Scanner s = new Scanner(System.in);
-        double a = s.nextInt();
-        double b = s.nextInt();
-        double c = s.nextInt();
+        double a = s.nextDouble();
+        double b = s.nextDouble();
+        double c = s.nextDouble();
         double expr = (b + Math.sqrt(Math.pow(b, 2) + 4 * a * c)) / 2 * a - Math.pow(a, 3) * c + Math.pow(b, -3);
         System.out.println("Result:");
         System.out.println(expr);
     }
 
-    public static void task3(){
+    public static void Task3(){
         System.out.println("Input cathetuses a, b:");
         Scanner s = new Scanner(System.in);
-        double a = s.nextInt();
-        double b = s.nextInt();
+        double a = s.nextDouble();
+        double b = s.nextDouble();
 
         double hypotenuse = Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
         double perimeter = a + b + hypotenuse;
         double square = a*b/2;
 
-        System.out.println("Perimeter:");
-        System.out.println(perimeter);
-        System.out.println("Square:");
-        System.out.println(square);
+        System.out.println("Perimeter: " + perimeter);
+        System.out.println("Square: " + square);
     }
-}
+
+    public static void Task4(){
+
+        Scanner s = new Scanner(System.in);
+        System.out.println("Input point coordinate x:");
+        int x = s.nextInt();
+        System.out.println("Input point coordinate y:");
+        int y = s.nextInt();
+
+        if (( x >= -4 && x <= 4) && (y <=4 && y >=-3))
+           System.out.println("True!");
+        else
+           System.out.println("False!");
+
+    }
+
+    public static void Task5(){
+        System.out.println("Input 3 numbers:");
+        Scanner s = new Scanner(System.in);
+        double num1 = s.nextDouble();
+        double num2 = s.nextDouble();
+        double num3 = s.nextDouble();
+
+        if (num1 > 0)
+            System.out.println(Math.pow(num1, 2));
+        else
+            System.out.println(Math.pow(num1, 4));
+
+        if (num2 > 0)
+            System.out.println(Math.pow(num2, 2));
+        else
+            System.out.println(Math.pow(num2, 4));
+
+        if (num3 > 0)
+            System.out.println(Math.pow(num3, 2));
+        else
+            System.out.println(Math.pow(num3, 4));
+
+    }
+} // Main

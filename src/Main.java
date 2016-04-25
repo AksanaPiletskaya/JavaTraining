@@ -13,6 +13,7 @@ public class Main {
         // Task4();
         // Task5();
         // Task6();
+         Task7();
 
         // begin Task NoteBook
         /* Note note1 = new NoteBook("A1", 50, "Page 1");
@@ -132,6 +133,21 @@ public class Main {
 
         double sum = minNum + maxNum;
         System.out.println("Sum:" + sum);
+    }
+
+    public static void Task7(){
+        Scanner s = new Scanner(System.in);
+        System.out.println("Input a, b:");
+        int a = s.nextInt();
+        int b = s.nextInt();
+        System.out.println("Input step h:");
+        int h = s.nextInt();
+
+        int x;
+        for (x = a; x <= b; x = x + h) {
+            double f = Math.pow(Math.sin(x), 2) - Math.cos(2*x);
+            System.out.println("x = " + x + "  f(x) = " + f);
+        }
     }
 
 } // Main

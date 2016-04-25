@@ -10,8 +10,17 @@ public class Main {
         // Task1();
         // Task2();
         // Task3();
-         Task4();
+        // Task4();
         // Task5();
+        // Task6();
+
+        // begin Task NoteBook
+        /* Note note1 = new NoteBook("A1", 50, "Page 1");
+           Note note2 = new NoteBook("A2", 150, "Page 123");
+
+           System.out.println("Equals: " + note1.equals(note2));*/
+        // end Task NoteBook
+
     }
 
     public static void Task1() throws IOException{
@@ -106,6 +115,23 @@ public class Main {
             System.out.println(Math.pow(num3, 2));
         else
             System.out.println(Math.pow(num3, 4));
-
     }
+
+    public static void Task6(){
+        System.out.println("Input 3 numbers:");
+        Scanner s = new Scanner(System.in);
+        double num1 = s.nextDouble();
+        double num2 = s.nextDouble();
+        double num3 = s.nextDouble();
+
+        double minNum1 = Math.min(num1, num2);
+        double minNum = Math.min(minNum1, num3);
+
+        double maxNum1 = Math.max(num1, num2);
+        double maxNum = Math.max(minNum1, num3);
+
+        double sum = minNum + maxNum;
+        System.out.println("Sum:" + sum);
+    }
+
 } // Main

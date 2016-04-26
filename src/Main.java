@@ -16,7 +16,8 @@ public class Main {
         // Task6();
         // Task7();
         // Task8();
-        Task9();
+        // Task9();
+        Task10();
 
         // begin Task NoteBook
         /* Note note1 = new NoteBook("A1", 50, "Page 1");
@@ -168,8 +169,9 @@ public class Main {
     }
 
     public static void Task9(){
-        int a1[] = { 3, 6, 9, 12, 19 };
-        int a2[] = { 1, 2, 4 };
+        int a1[] = { 1, 2, 3, 4, 5 };
+        int a2[] = { 10, 20, 40 };
+
         int k = 3;
 
         System.arraycopy(a2, 0, a1, k-1, a2.length);
@@ -177,5 +179,41 @@ public class Main {
             System.out.println(i +": " + a1[i]);
         }
     }
+
+    public static void Task10() {
+        System.out.println("Input n:");
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt();
+        int k = 1;
+        int num = n;
+
+        int[][] matrix = new int[n][n];
+
+        for(int i = 0; i < matrix.length; i++) {
+            if(i%2 == 0) {
+                for(int j = 0; j < matrix.length; j++) {
+                    matrix[i][j] = k;
+                    k ++;
+                }
+                k = 1;
+            }
+            else {
+                for(int j = 0; j < matrix.length;j++) {
+                    matrix[i][j] = num;
+                    num --;
+                }
+                num = n;
+            }
+        }
+
+        for(int i = 0; i < matrix.length; i++) {
+            for(int j = 0; j < matrix.length; j++) {
+                System.out.print(matrix[i][j]+" ");
+            }
+            System.out.println();
+        }
+
+    }
+
 
 } // Main

@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.Scanner;
 
 
@@ -13,7 +14,9 @@ public class Main {
         // Task4();
         // Task5();
         // Task6();
-         Task7();
+        // Task7();
+        // Task8();
+        Task9();
 
         // begin Task NoteBook
         /* Note note1 = new NoteBook("A1", 50, "Page 1");
@@ -135,7 +138,7 @@ public class Main {
         System.out.println("Sum:" + sum);
     }
 
-    public static void Task7(){
+    public static void Task7() {
         Scanner s = new Scanner(System.in);
         System.out.println("Input a, b:");
         int a = s.nextInt();
@@ -143,10 +146,35 @@ public class Main {
         System.out.println("Input step h:");
         int h = s.nextInt();
 
-        int x;
-        for (x = a; x <= b; x = x + h) {
-            double f = Math.pow(Math.sin(x), 2) - Math.cos(2*x);
-            System.out.println("x = " + x + "  f(x) = " + f);
+        int i;
+        for (i = a; i <= b; i = i + h) {
+            double f = Math.pow(Math.sin(i), 2) - Math.cos(2 * i);
+            System.out.println("x = " + i + "  f(x) = " + f);
+
+        }
+    }
+
+    public static void Task8(){
+        int a[] = { 3, 6, 9, 12, 19 };
+        int k = 3;
+        int sum = 0;
+
+        for (int i = 0; i < a.length; i++){
+            if (a[i] % k == 0){
+               sum = sum + a[i];
+            }
+        }
+        System.out.println("Sum:" + sum);
+    }
+
+    public static void Task9(){
+        int a1[] = { 3, 6, 9, 12, 19 };
+        int a2[] = { 1, 2, 4 };
+        int k = 3;
+
+        System.arraycopy(a2, 0, a1, k-1, a2.length);
+        for (int i = 0; i < a1.length; i++){
+            System.out.println(i +": " + a1[i]);
         }
     }
 

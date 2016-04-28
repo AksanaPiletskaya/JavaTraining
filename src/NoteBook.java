@@ -1,25 +1,39 @@
-public class NoteBook extends Note{
-    private String model;
-    private String page;
-    private int quantityPages;
+import java.util.ArrayList;
 
-    public NoteBook(String model, int quantityPages, String page){
-       this.model = model;
-       this.quantityPages = quantityPages;
-       this.page = page;
+public class NoteBook extends NoteBookConsoleView {
+    private ArrayList<Note> notes;
+    private String name;
+
+    public NoteBook(String name){
+       this.name = name;
     }
 
-    public boolean equals(Object object){
-        if (object == null) {
-           return false;
-        }
+    public NoteBook(){
 
-        NoteBook nb1 = (NoteBook) object;
-
-        if (this.model == nb1.model){
-           return true;
-        }
-        return false;
     }
 
+
+
+    @Override
+    public String toString() {
+        return "NoteBook{" +
+                "name='" + name + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (!(obj instanceof NoteBook)) return false;
+
+        NoteBook noteBook = (NoteBook) obj;
+
+        return !(name != null ? !name.equals(noteBook.name) : noteBook.name != null);
+
+    }
+
+    @Override
+    public int hashCode() {
+        return name != null ? name.hashCode() : 0;
+    }
 }

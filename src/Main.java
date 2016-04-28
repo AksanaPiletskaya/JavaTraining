@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        // Task1();
+         Task1();
         // Task2();
         // Task3();
         // Task4();
@@ -17,18 +17,23 @@ public class Main {
         // Task7();
         // Task8();
         // Task9();
-        Task10();
+        // Task10();
 
         // begin Task NoteBook
-        /* Note note1 = new NoteBook("A1", 50, "Page 1");
-           Note note2 = new NoteBook("A2", 150, "Page 123");
+        /*NBP obj = NBP.getInstance();
 
-           System.out.println("Equals: " + note1.equals(note2));*/
+        Note note1 = new Note("123", "note1");
+        Note note2 = new Note("4567", "note2");
+
+        NoteBook noteBook = new NoteBook("My notebook");
+
+        System.out.println("Equals: " + note1.equals(note2));
         // end Task NoteBook
-
+        */
     }
 
     public static void Task1() throws IOException{
+     /* //begin 1-st variant
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Enter number:");
 
@@ -57,6 +62,28 @@ public class Main {
         } catch (NumberFormatException nfe) {
             System.err.println("Invalid Format!");
         }
+        //end 1-st variant
+     */
+
+     // 2-d variant
+        System.out.println("Input four figures number:");
+        Scanner s = new Scanner(System.in);
+        int num = s.nextInt();
+
+        String str  = Integer.toString(num);
+        char[] arrCh = new char[4];
+        arrCh = str.toCharArray();
+
+        int[] arrInt = new int[4];
+        for (int i = 0; i < arrCh.length; i++) {
+            arrInt[i] = Integer.parseInt(arrCh[i]+"");
+        }
+
+        if (arrInt[0] + arrInt[1] == arrInt[2] + arrInt[3]) {
+            System.out.println("True!");
+        } else
+            System.out.println("False!");
+
     }
 
     public static void Task2(){
@@ -148,15 +175,18 @@ public class Main {
         int h = s.nextInt();
 
         int i;
+        System.out.println("x   f(x)");
+        System.out.println("--------------");
         for (i = a; i <= b; i = i + h) {
             double f = Math.pow(Math.sin(i), 2) - Math.cos(2 * i);
-            System.out.println("x = " + i + "  f(x) = " + f);
+            System.out.println( i + "   " + f);
+
 
         }
     }
 
     public static void Task8(){
-        int a[] = { 3, 6, 9, 12, 19 };
+        int[] a = { 3, 6, 9, 12, 19 };
         int k = 3;
         int sum = 0;
 
@@ -165,12 +195,13 @@ public class Main {
                sum = sum + a[i];
             }
         }
+        System.out.println("array:" + Arrays.toString(a) + ", k:" + k);
         System.out.println("Sum:" + sum);
     }
 
     public static void Task9(){
-        int a1[] = { 1, 2, 3, 4, 5 };
-        int a2[] = { 10, 20, 40 };
+        int[] a1 = { 1, 2, 3, 4, 5 };
+        int[] a2 = { 10, 20, 40 };
 
         int k = 3;
 
